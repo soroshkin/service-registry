@@ -1,0 +1,36 @@
+plugins {
+  id 'org.springframework.boot' version '2.7.4'
+  id 'io.spring.dependency-management' version '1.0.14.RELEASE'
+  id 'java'
+}
+
+group 'com.epam.microservices'
+version '1.0-SNAPSHOT'
+
+repositories {
+  mavenCentral()
+}
+
+ext {
+  springBootVersion = "2.7.4"
+
+  amazonVersion = "1.12.311"
+  mySqlVersion = "8.0.30"
+
+  h2Version = "2.1.214"
+}
+
+dependencies {
+  implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
+  implementation "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
+  implementation "org.springframework.boot:spring-boot-starter-validation:${springBootVersion}"
+
+  implementation "mysql:mysql-connector-java:${mySqlVersion}"
+
+  testImplementation "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
+  testImplementation "com.h2database:h2:${h2Version}"
+}
+
+test {
+  useJUnitPlatform()
+}
