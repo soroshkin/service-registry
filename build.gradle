@@ -13,19 +13,15 @@ repositories {
 
 ext {
   springBootVersion = "2.7.4"
-
-  amazonVersion = "1.12.311"
-  mySqlVersion = "8.0.30"
+  springCloudVersion = "3.1.4"
 
   h2Version = "2.1.214"
 }
 
 dependencies {
   implementation "org.springframework.boot:spring-boot-starter-web:${springBootVersion}"
-  implementation "org.springframework.boot:spring-boot-starter-data-jpa:${springBootVersion}"
-  implementation "org.springframework.boot:spring-boot-starter-validation:${springBootVersion}"
+  implementation "org.springframework.cloud:spring-cloud-starter-netflix-eureka-server:${springCloudVersion}"
 
-  implementation "mysql:mysql-connector-java:${mySqlVersion}"
 
   testImplementation "org.springframework.boot:spring-boot-starter-test:${springBootVersion}"
   testImplementation "com.h2database:h2:${h2Version}"
